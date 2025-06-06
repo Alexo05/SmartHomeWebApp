@@ -55,7 +55,16 @@ nav .sidebar {
   text-decoration: none;
 }
 .lists .nav-link:hover {
-  background-color: #4070f4;
+  background-color: #ff7c7c;
+}
+.lists .selected{
+    background-color: #ff7c7c;
+}
+.lists .selected .icon{
+    color: #fff;
+}
+.lists .selected .link{
+    color: #fff;
 }
 .nav-link .icon {
   margin-right: 14px;
