@@ -1,4 +1,4 @@
-.card{
+.deviceCard{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,39 +9,39 @@
     height: 220px;
 }
 
-.card .iconCard{
+.deviceCard .iconCard{
     background-color: white;
     padding: 7px;
     border-radius: 10px;
 }
 
-.card .iconCard img{
+.deviceCard .iconCard img{
     width: 30px;
 }
 
-.card .name{
+.deviceCard .name{
     color: white;
 }
 
-.card .name .title{
+.deviceCard .name .title{
     font-size: 16px;
     font-weight: 700;
     text-align: center;
 }
 
-.card .name .subTitle{
+.deviceCard .name .subTitle{
     font-size: 14px;
     text-align: center;
 }
 
-.card .switch .toggle {
+.deviceCard .switch .toggle {
     position: relative;
     display: inline-block;
     width: 4rem;
     height: 1.8rem;
 }
 
-.card .switch .toggle input {
+.deviceCard .switch .toggle input {
     display: none;
 }
 
