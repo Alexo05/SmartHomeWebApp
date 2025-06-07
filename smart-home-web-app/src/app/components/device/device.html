@@ -1,1 +1,15 @@
-<p>device works!</p>
+<div class="card" [ngStyle]="{'background-color': deviceColor}">
+    <div class="iconCard">
+        <img [src]="deviceIcon" alt="">
+    </div>
+    <div class="name">
+        <p class="title">{{deviceName}}</p>
+        <p class="subTitle">40% Luminosity</p>
+    </div>
+    <div class="switch">
+        <label class="toggle">
+            <input id="toggleswitch" type="checkbox">
+            <span class="roundbutton" [style.--highlight-color]="deviceColor"></span>
+        </label>
+    </div>
+</div>

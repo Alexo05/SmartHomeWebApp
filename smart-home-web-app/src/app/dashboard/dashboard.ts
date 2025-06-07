@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Device } from '../components/device/device';
 
 @Component({
@@ -8,7 +8,7 @@ import { Device } from '../components/device/device';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
-export class Dashboard {
+export class Dashboard implements OnInit {
   username: string = '';
   nbDevices: Number = 0;
   temp: Number = 0;
