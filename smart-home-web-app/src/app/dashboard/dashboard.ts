@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Device } from '../components/device/device';
+import { DeviceModule } from '../components/device/deviice.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,13 @@ export class Dashboard implements OnInit {
   nbDevices: Number = 0;
   temp: Number = 0;
   hum: Number = 0;
+  device: DeviceModule = {
+    name: 'Living Room lights',
+    port: 12,
+    icon: '/assets/lighton.png',
+    state: false,
+    color: '#ffdc6c'
+  }
   constructor() {
    }
 

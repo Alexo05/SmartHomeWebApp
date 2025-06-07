@@ -1,0 +1,51 @@
+.devices{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.devices .title{
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+
+.devices .title p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.devices .section1{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.devices .section1 button{
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.devices .section1 button i{
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.devices .section1 p{
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.devices .section1 p span{
+    color: #ff7c7c;
+}
+
+.devices .section2{
+    padding: 10px 0;
+}

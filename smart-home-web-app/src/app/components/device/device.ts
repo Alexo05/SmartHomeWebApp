@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DeviceModule } from './deviice.module';
 
 @Component({
   selector: 'app-device',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './device.scss'
 })
 export class Device implements OnInit{
+    @Input() device!: DeviceModule;
     deviceName: string = '';
     deviceIcon: string = '';
     deviceState: boolean = false;
@@ -16,9 +18,9 @@ export class Device implements OnInit{
     }
 
     ngOnInit() {
-      this.deviceName = "Living Room lights";
-      this.deviceIcon = "/assets/lighton.png";
-      this.deviceState = false;
-      this.deviceColor = "#ffdc6c";
+      this.deviceName = this.device.name;
+      this.deviceIcon = this.device.icon;
+      this.deviceState = this.device.state;
+      this.deviceColor = this.device.color;
   }
 }
