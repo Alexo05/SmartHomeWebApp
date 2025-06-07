@@ -1,1 +1,28 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <div class="title">
+        <p>Dashboard</p>
+    </div>
+    <div class="section1">
+        <p>Good moorning <span>{{username}}</span> </p>
+    </div>
+    <div  class="section2" [ngSwitch]="nbDevices">
+        <div class="devices">     
+            <p *ngSwitchCase="0">No Device is connected</p>
+            <p *ngSwitchCase="1"><span>{{ nbDevices }}</span> Device is connected</p>
+            <p *ngSwitchDefault><span>{{ nbDevices }}</span> Devices are connected</p>
+        </div>
+        <div class="stats">
+            <div class="temp">
+                <i class="fas fa-thermometer-half"></i>
+                <p>{{temp}}°C</p>
+            </div>
+            <div class="hum">
+                <i class="bi bi-droplet-fill"></i>
+                <p>{{hum}}%</p>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <app-device></app-device>
+    </div>
+</div>

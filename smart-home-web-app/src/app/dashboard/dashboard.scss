@@ -1,0 +1,81 @@
+.dashboard{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.dashboard .title{
+    border-bottom: 1px solid #333;
+    padding: 10px;
+}
+
+.dashboard .title p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.dashboard .section1{
+    padding: 10px;
+}
+.dashboard .section1 p{
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.dashboard .section1 p span{
+    color: #ff7c7c;
+}
+
+.dashboard .section2{
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.dashboard .section2 .devices p{
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+}
+
+.dashboard .section2 .devices p span{
+    color: #ff7c7c;
+    font-weight: 700;
+}
+
+.dashboard .section2 .stats{
+    display: flex;
+}
+
+.dashboard .section2 .stats div{
+    display: flex;
+    color: white;
+    padding: 6px 10px 6px 10px;
+    border-radius: 5px;
+}
+
+.dashboard .section2 .stats .temp{
+    background-color: #ff7c7c;
+    margin-right: 5px;
+}
+
+.dashboard .section2 .stats .hum{
+    background-color: #ffb37c;
+}
+
+.dashboard .section2 .stats div i {
+    margin-right: 10px;
+}
+
+.dashboard .section2 .stats div p{
+    font-weight: 700;
+}
+
+.dashboard .section3{
+    padding: 10px;
+}

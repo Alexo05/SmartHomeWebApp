@@ -6,17 +6,17 @@
         </div>
         <div class="sidebar-content">
           <ul class="lists">
-            <li class="list">
+            <li class="list" routerLink="/dashboard"> 
               <div class="nav-link"   [ngClass]="{ 'selected': currentPath === '/dashboard' }">
                 <i class="bx bx-home-alt icon"></i>
                 <span class="link">Dashboard</span>
               </div>
             </li>
-            <li class="list">
-              <a href="#" class="nav-link">
+            <li class="list" routerLink="/devices">
+              <div href="#" class="nav-link" [ngClass]="{ 'selected': currentPath === '/devices' }">
                 <i class="bx bx-bar-chart-alt-2 icon"></i>
                 <span class="link">Devices</span>
-              </a>
+              </div>
             </li>
           
           </ul>
