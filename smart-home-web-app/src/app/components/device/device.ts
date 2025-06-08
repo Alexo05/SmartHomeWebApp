@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { DeviceModule } from './deviice.module';
+import { DeviceModule } from './device.module';
 
 @Component({
   selector: 'app-device',
@@ -19,7 +19,7 @@ export class Device implements OnInit{
 
     ngOnInit() {
       this.deviceName = this.device.name;
-      this.deviceIcon = this.device.icon;
+      this.deviceIcon = this.device.imageUrl;
       this.deviceState = this.device.state;
       this.deviceColor = this.device.color;
   }
