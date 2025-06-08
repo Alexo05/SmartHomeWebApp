@@ -4,47 +4,50 @@
     </div>
     <div class="section1">
         <p>All <span>connected</span> devices</p>
-        <button  type="button"  data-bs-toggle="modal" data-bs-target="#myModal">
+        <button  type="button" class="btn-add"  data-bs-toggle="modal" data-bs-target="#myModal">
             <i class="bi bi-plus-lg"></i> Add Device
         </button>
     </div>
     <div class="section2">
         <app-table></app-table>
     </div>
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-custom">
+        <div class="modal-content p-3">
 
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add New Device</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+          <div class="modal-header border-0">
+            <h5 class="modal-title fw-bold" id="exampleModalLabel">➕ Add New Device</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
 
-      <div class="modal-body">
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="pt-1 pb-2">Device Type</label>
-                <select class="form-control">
-                    <option>Large select</option>
+          <div class="modal-body">
+            <form class="device-form">
+              <div class="form-group mb-3">
+                <label class="form-label">Device Type</label>
+                <select class="form-select">
+                  <option *ngFor="let type of deviceTypes" [value]="type.id">{{ type.name }}</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1" class="pt-2 pb-2">Device Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1" class="pt-2 pb-2">Device Port</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Port">
-            </div>
-        </form>
-      </div>
+              </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn col" style="background-color: #ff7c7c; color: white;">Add</button>
-      </div>
+              <div class="form-group mb-3">
+                <label class="form-label">Device Name</label>
+                <input type="text" class="form-control" placeholder="Enter device name">
+              </div>
 
+              <div class="form-group mb-3">
+                <label class="form-label">Device Port</label>
+                <input type="number" class="form-control" placeholder="e.g. 8080">
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-add">Add Device</button>
+          </div>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
 </div>

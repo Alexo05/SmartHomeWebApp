@@ -49,3 +49,46 @@
 .devices .section2{
     padding: 10px 0;
 }
+
+.modal-custom {
+  max-width: 600px;
+  width: 100%;
+
+  .modal-content {
+    border-radius: 12px;
+    background-color: #fffaf8;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    height: auto;
+  }
+}
+
+.device-form {
+  .form-label {
+    font-weight: 600;
+    color: #444;
+  }
+
+  .form-control,
+  .form-select {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    &:focus {
+      border-color: #ff7c7c;
+      box-shadow: 0 0 0 0.2rem rgba(255, 124, 124, 0.25);
+    }
+  }
+}
+
+.btn-add {
+  background-color: #ff7c7c;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 8px 20px;
+  transition: 0.3s ease;
+  border: none;
+  &:hover {
+    background-color: #ff5252;
+  }
+}

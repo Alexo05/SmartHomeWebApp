@@ -1,40 +1,31 @@
-<table>
-                <thead>
-                    <tr>
-                        <th> Id </th>
-                        <th> Name </th>
-                        <th> Port </th>
-                        <th> Status </th>
-                        <th> Action </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td> 1 </td>
-                        <td> <img src="" alt="">Zinzu Chan Lee</td>
-                        <td> Seoul </td>
-                        <td>
-                            <p class="status delivered">On</p>
-                        </td>
-                        <td> 
-                            <button>
-                                <i class="bi bi-trash3-fill"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td><img src="" alt=""> Jeet Saru </td>
-                        <td> Kathmandu </td>
-                        <td>
-                            <p class="status cancelled">Off</p>
-                        </td>
-                        <td> 
-                            <button>
-                                <i class="bi bi-trash3-fill"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
+<table class="table table-hover align-middle device-table">
+  <thead class="table-light p-1">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Port</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let device of devices" class="p-1">
+      <td>{{ device.id }}</td>
+      <td>
+        <img [src]="device.image" alt="profile" class="device-avatar me-2" />
+        {{ device.name }}
+      </td>
+      <td>{{ device.port }}</td>
+      <td>
+        <span class="badge" [ngClass]="device.status === 'On' ? 'bg-success' : 'bg-danger'">
+          {{ device.status }}
+        </span>
+      </td>
+      <td>
+        <button class="btn btn-outline-danger btn-sm">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
