@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Device } from '../components/device/device';
 import { DeviceModule } from '../components/device/device.module';
 import { DeviceService } from '../services/device';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,17 +28,16 @@ export class Dashboard implements OnInit {
     state: false,
     color: '#ffdc6c'
   }
-  constructor(private deviceService: DeviceService) {
+  constructor(private deviceService: DeviceService, private cdr: ChangeDetectorRef) {
    }
 
   ngOnInit() {
       this.deviceService.getDevices().subscribe(data => {
         this.devices = data;
         this.loading = false;
-        this.nbDevices = this.devices.length;  // update here when data arrives
-        console.log(this.loading);
+        this.nbDevices = this.devices.length; 
+        this.cdr.detectChanges();
       });
-      this.loading = false;
       this.username = "Alexo";
       this.temp = 20;
       this.hum = 13;
