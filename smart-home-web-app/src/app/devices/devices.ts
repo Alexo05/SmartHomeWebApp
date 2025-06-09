@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Table } from '../components/table/table';
 import { CommonModule } from '@angular/common';
+import { DeviceService } from '../services/device';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { DeviceModule } from '../components/device/device.module';
+import { NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-devices',
-  imports: [CommonModule, Table],
+  imports: [CommonModule, Table, NgxSpinnerModule, FormsModule ],
   templateUrl: './devices.html',
   styleUrl: './devices.scss'
 })
-export class Devices {
-
+export class Devices implements OnInit {
+  constructor(private deviceService: DeviceService, private cdr: ChangeDetectorRef, private spinner: NgxSpinnerService) {
+   }
+  loading: boolean = true;
+  devices: DeviceModule[] = [];
   deviceTypes = [
   {
     id: 1,
@@ -33,5 +41,18 @@ export class Devices {
     color: "#a16cff",
   }
 ];
+  onSubmit(form: NgForm) {
+    console.log('Form Values:', form.value);
+  }
+
+  ngOnInit() {
+      this.spinner.show();
+      this.deviceService.getDevices().subscribe(data => {
+        this.devices = data;
+        this.loading = false;
+        this.cdr.detectChanges();
+        this.spinner.hide();
+      });
+  }
 
 }

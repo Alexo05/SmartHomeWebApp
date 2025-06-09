@@ -1,0 +1,26 @@
+.device-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+
+  thead {
+    font-weight: bold;
+  }
+
+  td {
+    vertical-align: middle;
+  }
+
+  .device-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 50px;
+  }
+}

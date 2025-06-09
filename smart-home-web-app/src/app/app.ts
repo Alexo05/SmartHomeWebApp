@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Home } from './home/home';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [Home, HttpClientModule],
+  imports: [Home, FormsModule],
   templateUrl: './app.html',
   template: ``,
   styleUrl: './app.scss'

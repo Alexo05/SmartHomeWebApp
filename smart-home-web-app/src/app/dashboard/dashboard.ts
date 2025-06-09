@@ -4,11 +4,12 @@ import { Device } from '../components/device/device';
 import { DeviceModule } from '../components/device/device.module';
 import { DeviceService } from '../services/device';
 import { ChangeDetectorRef } from '@angular/core';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,   
-  imports: [CommonModule, Device],
+  imports: [CommonModule, Device, NgxSpinnerModule ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
 })
@@ -19,24 +20,17 @@ export class Dashboard implements OnInit {
   nbDevices: Number = 0;
   temp: Number = 0;
   hum: Number = 0;
-  device: DeviceModule = {
-    typeId: 1,
-    name: 'Living Room lights',
-    port: 12,
-    imageUrl: '/assets/lighton.png',
-    imageUrl1: '/assets/lighton.png',
-    state: false,
-    color: '#ffdc6c'
-  }
-  constructor(private deviceService: DeviceService, private cdr: ChangeDetectorRef) {
+  constructor(private deviceService: DeviceService, private cdr: ChangeDetectorRef, private spinner: NgxSpinnerService) {
    }
 
   ngOnInit() {
+      this.spinner.show();
       this.deviceService.getDevices().subscribe(data => {
         this.devices = data;
         this.loading = false;
         this.nbDevices = this.devices.length; 
         this.cdr.detectChanges();
+        this.spinner.hide();
       });
       this.username = "Alexo";
       this.temp = 20;

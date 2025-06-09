@@ -1,27 +1,28 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DeviceModule } from '../device/device.module';
+import { DeviceService } from '../../services/device';
+import { MessageService } from 'primeng/api';
+import { Toast } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-table',
-  imports: [CommonModule],
+  imports: [CommonModule, Toast, ButtonModule],
+  providers: [MessageService],
   templateUrl: './table.html',
   styleUrl: './table.scss'
 })
 export class Table {
-  devices = [
-  {
-    id: 1,
-    name: 'Zinzu Chan Lee',
-    port: 'Seoul',
-    status: 'On',
-    image: '/assets/lighton.png'
-  },
-  {
-    id: 2,
-    name: 'Jeet Saru',
-    port: 'Kathmandu',
-    status: 'Off',
-    image: '/assets/lighton.png'
-  }
-];
+  constructor(private deviceService: DeviceService, private messageService: MessageService) {
+   }
+   deleteDevice(id?: string) {
+    this.deviceService.deleteDevice(id!);
+    this.devices = this.devices.filter(device => device.id !== id);
+    this.showSuccess();
+   }
+   showSuccess() {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Device deleted' });
+    }
+  @Input() devices!: DeviceModule[];
 }

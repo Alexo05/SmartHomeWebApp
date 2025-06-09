@@ -1,7 +1,7 @@
 <table class="table table-hover align-middle device-table">
   <thead class="table-light p-1">
     <tr>
-      <th>Id</th>
+      <th>Type Id</th>
       <th>Name</th>
       <th>Port</th>
       <th>Status</th>
@@ -9,20 +9,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let device of devices" class="p-1">
-      <td>{{ device.id }}</td>
+    <tr class="p-1"  *ngFor="let device of devices">
+      <td>{{ device.typeId }}</td>
       <td>
-        <img [src]="device.image" alt="profile" class="device-avatar me-2" />
+        <img [src]="device.imageUrl" alt="profile" class="device-avatar me-2" />
         {{ device.name }}
       </td>
       <td>{{ device.port }}</td>
       <td>
-        <span class="badge" [ngClass]="device.status === 'On' ? 'bg-success' : 'bg-danger'">
-          {{ device.status }}
+        <span class="badge" [ngClass]="device.state ? 'bg-success' : 'bg-danger'">
+          {{ device.state? "On":"Off" }}
         </span>
       </td>
       <td>
-        <button class="btn btn-outline-danger btn-sm">
+        <p-toast />
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteDevice(device.id)">
           <i class="bi bi-trash3-fill"></i>
         </button>
       </td>

@@ -1,0 +1,18 @@
+
+      <td>{{ deviceTypeId }}</td>
+      <td>
+        <img [src]="deviceIcon" alt="profile" class="device-avatar me-2" />
+        {{ deviceName}}
+      </td>
+      <td>{{ devicePort}}</td>
+      <td>
+        <span class="badge" [ngClass]="deviceState ? 'bg-success' : 'bg-danger'">
+          {{deviceState ? 'On' : 'Off'}}
+        </span>
+      </td>
+      <td>
+        <p-toast />
+        <button class="btn btn-outline-danger btn-sm" (click)="handleDelete()">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
+      </td>
