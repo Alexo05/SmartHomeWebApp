@@ -17,8 +17,15 @@ export class Table {
   constructor(private deviceService: DeviceService, private messageService: MessageService) {
    }
    deleteDevice(id?: string) {
-    this.deviceService.deleteDevice(id!);
-    this.devices = this.devices.filter(device => device.id !== id);
+    this.deviceService.deleteDevice(id!).subscribe({
+      next: () => {
+        console.log(`Device with ID ${id} deleted successfully`);
+        this.devices = this.devices.filter(device => device.id !== id);
+      },
+      error: (err) => {
+        console.error('Error deleting device:', err);
+      }
+    });
     this.showSuccess();
    }
    showSuccess() {
