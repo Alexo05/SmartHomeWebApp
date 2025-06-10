@@ -26,4 +26,8 @@ export class Sidebar implements OnInit {
       }
     });
   }
+  logout(){
+    sessionStorage.removeItem('user');
+    this.router.navigate(['/login']);
+  }
 }

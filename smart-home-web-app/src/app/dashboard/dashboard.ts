@@ -32,7 +32,9 @@ export class Dashboard implements OnInit {
         this.cdr.detectChanges();
         this.spinner.hide();
       });
-      this.username = "Alexo";
+      const userStr = sessionStorage.getItem('user');
+      const user = userStr ? JSON.parse(userStr) : {};
+      this.username = user.username || '';
       this.temp = 20;
       this.hum = 13;
   }

@@ -7,7 +7,7 @@ import { DeviceModule } from '../components/device/device.module';
   providedIn: 'root'
 })
 export class DeviceService {
-   private apiUrl = 'https://localhost:7104/api/devices'; // Change this to your actual API base URL
+   private apiUrl = 'https://localhost:7104/api/devices'; 
 
   constructor(private http: HttpClient) {}
 
