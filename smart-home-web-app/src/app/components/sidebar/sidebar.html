@@ -13,7 +13,7 @@
               </div>
             </li>
             <li class="list" routerLink="/devices">
-              <div href="#" class="nav-link" [ngClass]="{ 'selected': currentPath === '/devices' }">
+              <div class="nav-link" [ngClass]="{ 'selected': currentPath === '/devices' }">
                 <i class="bx bx-bar-chart-alt-2 icon"></i>
                 <span class="link">Devices</span>
               </div>
@@ -21,18 +21,20 @@
           
           </ul>
           <div class="bottom-cotent">
-            <li class="list">
-              <a href="#" class="nav-link">
+            <ul class="lists">
+            <li class="list" routerLink="/settings">
+              <div class="nav-link" [ngClass]="{ 'selected': currentPath === '/settings' }">
                 <i class="bx bx-cog icon"></i>
                 <span class="link">Settings</span>
-              </a>
+              </div>
             </li>
             <li class="list">
-              <a href="#" class="nav-link">
+              <a class="nav-link">
                 <i class="bx bx-log-out icon"></i>
                 <span class="link">Logout</span>
               </a>
             </li>
+            </ul>
           </div>
         </div>
       </div>
